@@ -13,13 +13,9 @@ const DEFAULT_NOTICE_TIMEOUT_SECONDS = 5;
  * @author dbarenholz
  */
 export class PlaintextNotice extends Notice {
-	constructor(
-		plugin: PlaintextPlugin,
-		message: string | DocumentFragment,
-		timeout = DEFAULT_NOTICE_TIMEOUT_SECONDS
-	) {
-		super(message, timeout * 1000);
-		const msg = craftLogMessage(plugin, message);
-		console.log(msg);
-	}
+  constructor(plugin: PlaintextPlugin, message: string | DocumentFragment, timeout = DEFAULT_NOTICE_TIMEOUT_SECONDS) {
+    super(message, timeout * 1000);
+    const msg = craftLogMessage(plugin, message);
+    console.log(msg);
+  }
 }
