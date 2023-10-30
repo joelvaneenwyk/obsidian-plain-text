@@ -1,4 +1,4 @@
-import PlaintextPlugin from "./main";
+import PlainTextPlugin from './main';
 
 /**
  * Extensions obsidian supports natively.
@@ -10,31 +10,31 @@ import PlaintextPlugin from "./main";
  * @since 2023/06/01
  */
 export const OBSIDIAN_EXTENSIONS: Set<string> = new Set([
-	"md",
+  'md',
 
-	"png",
-	"webp",
-	"jpg",
-	"jpeg",
-	"gif",
-	"bmp",
-	"svg",
+  'png',
+  'webp',
+  'jpg',
+  'jpeg',
+  'gif',
+  'bmp',
+  'svg',
 
-	"mp3",
-	"webm",
-	"wav",
-	"m4a",
-	"ogg",
-	"3gp",
-	"flac",
+  'mp3',
+  'webm',
+  'wav',
+  'm4a',
+  'ogg',
+  '3gp',
+  'flac',
 
-	"mp4",
-	"webm",
-	"ogv",
-	"mov",
-	"mkv",
+  'mp4',
+  'webm',
+  'ogv',
+  'mov',
+  'mkv',
 
-	"pdf",
+  'pdf'
 ]);
 
 /**
@@ -47,30 +47,30 @@ export const OBSIDIAN_EXTENSIONS: Set<string> = new Set([
  * @since 2022/08/13
  */
 export const PROBLEMATIC_PLUGINS: Map<string, string> = new Map([
-	// https://github.com/deathau/cooklang-obsidian
-	["cooklang-obsidian", "cook"],
-	// https://github.com/deathau/csv-obsidian
-	["csv-obsidian", "csv"],
-	// https://github.com/caronchen/obsidian-chartsview-plugin
-	["obsidian-chartsview-plugin", "csv"],
-	// https://github.com/Darakah/obsidian-fountain
-	["obsidian-fountain", "fountain"],
-	// https://github.com/deathau/ini-obsidian
-	["ini-obsidian", "ini"],
-	// https://github.com/deathau/txt-as-md-obsidian
-	["txt-as-md-obsidian", "txt"],
-	// https://github.com/mkozhukharenko/mdx-as-md-obsidian
-	["mdx-as-md-obsidian", "mdx"],
-	// https://github.com/ryanpcmcquen/obsidian-org-mode
-	["obsidian-org-mode", "org"],
-	// https://github.com/tgrosinger/ledger-obsidian
-	["ledger-obsidian", "ledger"],
-	// https://github.com/zsviczian/obsidian-excalidraw-plugin
-	["obsidian-excalidraw-plugin", "excalidraw"],
+  // https://github.com/deathau/cooklang-obsidian
+  ['cooklang-obsidian', 'cook'],
+  // https://github.com/deathau/csv-obsidian
+  ['csv-obsidian', 'csv'],
+  // https://github.com/caronchen/obsidian-chartsview-plugin
+  ['obsidian-chartsview-plugin', 'csv'],
+  // https://github.com/Darakah/obsidian-fountain
+  ['obsidian-fountain', 'fountain'],
+  // https://github.com/deathau/ini-obsidian
+  ['ini-obsidian', 'ini'],
+  // https://github.com/deathau/txt-as-md-obsidian
+  ['txt-as-md-obsidian', 'txt'],
+  // https://github.com/mkozhukharenko/mdx-as-md-obsidian
+  ['mdx-as-md-obsidian', 'mdx'],
+  // https://github.com/ryanpcmcquen/obsidian-org-mode
+  ['obsidian-org-mode', 'org'],
+  // https://github.com/tgrosinger/ledger-obsidian
+  ['ledger-obsidian', 'ledger'],
+  // https://github.com/zsviczian/obsidian-excalidraw-plugin
+  ['obsidian-excalidraw-plugin', 'excalidraw']
 ]);
 
 export const removeObsidianExtensions = (exts: string[]): string[] => {
-	return exts.filter((ext) => !OBSIDIAN_EXTENSIONS.has(ext));
+  return exts.filter((ext) => !OBSIDIAN_EXTENSIONS.has(ext));
 };
 
 /**
@@ -80,56 +80,48 @@ export const removeObsidianExtensions = (exts: string[]): string[] => {
  * @param enabledPlugins set of enabled plugins (app.plugins.enabledPlugins)
  * @returns list of extensions without those used by any other enabled plugin
  */
-export const removeOtherExtensions = (
-	exts: string[],
-	enabledPlugins: Set<string>
-): string[] => {
-	for (const enabledPlugin of enabledPlugins) {
-		// Grab the extension to remove if it exists
-		const extToRemove = PROBLEMATIC_PLUGINS.has(enabledPlugin)
-			? PROBLEMATIC_PLUGINS.get(enabledPlugin)
-			: null;
-		// Remove if it exists
-		if (extToRemove) {
-			exts = exts.filter((ext) => ext !== extToRemove);
-		}
-	}
+export const removeOtherExtensions = (exts: string[], enabledPlugins: Set<string>): string[] => {
+  for (const enabledPlugin of enabledPlugins) {
+    // Grab the extension to remove if it exists
+    const extToRemove = PROBLEMATIC_PLUGINS.has(enabledPlugin) ? PROBLEMATIC_PLUGINS.get(enabledPlugin) : null;
+    // Remove if it exists
+    if (extToRemove) {
+      exts = exts.filter((ext) => ext !== extToRemove);
+    }
+  }
 
-	return exts;
+  return exts;
 };
 
-export const craftLogMessage = (
-	plugin: PlaintextPlugin,
-	message: string | DocumentFragment
-): string => {
-	const VERSION = plugin.manifest.version;
-	return `[Plaintext v${VERSION}]:  ${message}`;
+export const craftLogMessage = (plugin: PlainTextPlugin, message: string | DocumentFragment): string => {
+  const VERSION = plugin.manifest.version;
+  return `[PlainText v${VERSION}]:  ${message}`;
 };
 
 /**
  * Add typings for a better developer experience.
  */
-declare module "obsidian" {
-	interface App {
-		// Thank you javalent#3452 for suggestions on better typing
-		viewRegistry: {
-			unregisterView: (e: string) => void;
-			unregisterExtensions: (e: string[]) => void;
-		};
-		plugins: {
-			manifests: [
-				{
-					id: string;
-				}
-			];
-			enabledPlugins: Set<string>;
-		};
-	}
+declare module 'obsidian' {
+  interface App {
+    // Thank you javalent#3452 for suggestions on better typing
+    viewRegistry: {
+      unregisterView: (e: string) => void;
+      unregisterExtensions: (e: string[]) => void;
+    };
+    plugins: {
+      manifests: [
+        {
+          id: string;
+        }
+      ];
+      enabledPlugins: Set<string>;
+    };
+  }
 
-	interface View {
-		file: {
-			basename: string;
-			extension: string;
-		};
-	}
+  interface View {
+    file: {
+      basename: string;
+      extension: string;
+    };
+  }
 }

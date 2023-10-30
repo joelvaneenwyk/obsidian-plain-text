@@ -1,6 +1,6 @@
-# Plaintext for Obsidian
+# Mycoshiro PlainText for Obsidian
 
-This is an [Obisidan](https://obsidian.md) plugin that allows you to open _any_ file as plaintext.
+This is an [Obsidian](https://obsidian.md) plugin that allows you to open _any_ file as plaintext.
 It has been developed for Obsidian **v1.3.5**, and tested on **Windows**.
 
 Honestly, as long as you can run any Obsidian version you can _probably_ run this plugin as well.
@@ -12,12 +12,12 @@ But, this is all speculation!
 Type your desired file formats into the extensions text field in the settings, then click outside of the text field and watch the magic happen.
 Since 0.2.0 by default you can no longer accidentally break other plugins with views. Of course, if you desire, they will be breakable.
 
-**For any version BEFORE 0.2.0: There are other plugins that allow you to edit specific files. MAKE SURE TO NOT TYPE THEIR EXTENSIONS INTO THE SETTINGS FIELD FOR THIS PLUGIN. I cannot (yet) check for specific plugins that have their own view for a particular extension, and as such this plugin WILL overwrite the view, and break the other extension. If you do this by accident, open the plugin folder (`.obsidian/plugins/obsidian-plaintext/`), and remove from the `data.json` file the extensions that you typed by mistake.**~~
+**For any version BEFORE 0.2.0: There are other plugins that allow you to edit specific files. MAKE SURE TO NOT TYPE THEIR EXTENSIONS INTO THE SETTINGS FIELD FOR THIS PLUGIN. I cannot (yet) check for specific plugins that have their own view for a particular extension, and as such this plugin WILL overwrite the view, and break the other extension. If you do this by accident, open the plugin folder (`.obsidian/plugins/mycoshiro-plain-text/`), and remove from the `data.json` file the extensions that you typed by mistake.**~~
 
 ## Installing
 
 Interested in editing files in Obsidian? Great.
-Grab the latest release from the [releases](https://github.com/dbarenholz/obsidian-plaintext/releases) page, and copy `main.js` and `manifest.json` to `.obsidian/plugins/obsidian-plaintext/`. That's it!
+Grab the latest release from the [releases](https://github.com/dbarenholz/mycoshiro-plain-text/releases) page, and copy `main.js` and `manifest.json` to `.obsidian/plugins/mycoshiro-plain-text/`. That's it!
 
 You can also install the plugin through Obsidian by searching for **plaintext**.
 
@@ -37,10 +37,10 @@ This is free. Keep your money, I don't want it.
 
 **Version 0.3.0 (current)**:
 
--  Rewrite to use CM6 in stead of CM5. A first step towards https://github.com/dbarenholz/obsidian-plaintext/issues/1.
--  Fixed https://github.com/dbarenholz/obsidian-plaintext/issues/5 by upgrading to CM6.
--  Fixed https://github.com/dbarenholz/obsidian-plaintext/issues/11 - shame on me for getting the logic wrong.
--  Possibly implement https://github.com/dbarenholz/obsidian-plaintext/issues/7? I don't have Obsidian on my phone, so let me know :).
+- Rewrite to use CM6 in stead of CM5. A first step towards <https://github.com/dbarenholz/mycoshiro-plain-text/issues/1>.
+- Fixed <https://github.com/dbarenholz/mycoshiro-plain-text/issues/5> by upgrading to CM6.
+- Fixed <https://github.com/dbarenholz/mycoshiro-plain-text/issues/11> - shame on me for getting the logic wrong.
+- Possibly implement <https://github.com/dbarenholz/mycoshiro-plain-text/issues/7>? I don't have Obsidian on my phone, so let me know :).
 
 
 **Version 0.2.0**:

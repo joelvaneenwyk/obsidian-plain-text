@@ -1,10 +1,11 @@
 {
-	"id": "obsidian-plaintext",
-	"name": "Plaintext",
-	"version": "0.3.0",
-	"minAppVersion": "0.15.9",
-	"description": "Open any file as if it was plaintext directly in Obsidian.",
-	"author": "dbarenholz",
-	"authorUrl": "https://github.com/dbarenholz/dbarenholz",
-	"isDesktopOnly": false
+  "manifest_version": 3,
+  "id": "mycoshiro-plain-text",
+  "name": "Mycoshiro PlainText",
+  "version": "0.3.1",
+  "minAppVersion": "0.15.9",
+  "description": "Open any file as if it was plain text directly in Obsidian.",
+  "author": "Joel Van Eenwyk",
+  "authorUrl": "https://github.com/joelvaneenwyk/",
+  "isDesktopOnly": false
 }

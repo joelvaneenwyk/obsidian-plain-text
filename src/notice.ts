@@ -1,6 +1,6 @@
-import { Notice } from "obsidian";
-import { craftLogMessage } from "./helper";
-import PlaintextPlugin from "./main";
+import { Notice } from 'obsidian';
+import { craftLogMessage } from './helper';
+import PlainTextPlugin from './main';
 
 const DEFAULT_NOTICE_TIMEOUT_SECONDS = 5;
 
@@ -12,14 +12,10 @@ const DEFAULT_NOTICE_TIMEOUT_SECONDS = 5;
  * @version 0.3.0
  * @author dbarenholz
  */
-export class PlaintextNotice extends Notice {
-	constructor(
-		plugin: PlaintextPlugin,
-		message: string | DocumentFragment,
-		timeout = DEFAULT_NOTICE_TIMEOUT_SECONDS
-	) {
-		super(message, timeout * 1000);
-		const msg = craftLogMessage(plugin, message);
-		console.log(msg);
-	}
+export class PlainTextNotice extends Notice {
+  constructor(plugin: PlainTextPlugin, message: string | DocumentFragment, timeout = DEFAULT_NOTICE_TIMEOUT_SECONDS) {
+    super(message, timeout * 1000);
+    const msg = craftLogMessage(plugin, message);
+    console.log(msg);
+  }
 }
