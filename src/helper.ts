@@ -103,7 +103,7 @@ export const craftLogMessage = (plugin: PlainTextPlugin, message: string | Docum
  */
 declare module 'obsidian' {
   interface App {
-    // Thank you javalent#3452 for suggestions on better typing
+    // Thank you 'javalent#3452' for suggestions on better typing
     viewRegistry: {
       unregisterView: (e: string) => void;
       unregisterExtensions: (e: string[]) => void;
