@@ -42,26 +42,25 @@ This is free. Keep your money, I don't want it.
 - Fixed <https://github.com/dbarenholz/mycoshiro-plain-text/issues/11> - shame on me for getting the logic wrong.
 - Possibly implement <https://github.com/dbarenholz/mycoshiro-plain-text/issues/7>? I don't have Obsidian on my phone, so let me know :).
 
-
 **Version 0.2.0**:
 
--   Long overdue: plugin is enabled for mobile!
--   Extra protection: by default, extensions that other plugins add (such as .csv) are not allowed anymore!
--   We have over 500 downloads!
+- Long overdue: plugin is enabled for mobile!
+- Extra protection: by default, extensions that other plugins add (such as .csv) are not allowed anymore!
+- We have over 500 downloads!
 
 **Version 0.1.0**:
 
--   Complete rewrite of registering and deregistering.
--   Now _actually_ removes views when deregistering a particular extension.
--   Correctly filters out default obsidian extensions: No more accidentally overwriting the default markdown editor.
+- Complete rewrite of registering and deregistering.
+- Now _actually_ removes views when deregistering a particular extension.
+- Correctly filters out default obsidian extensions: No more accidentally overwriting the default markdown editor.
 
 **Version 0.0.2**:
 
--   First actual release.
--   Code is functional! You can open and edit files as plaintext.
+- First actual release.
+- Code is functional! You can open and edit files as plaintext.
 
 **Version 0.0.1**:
 
--   Not a release.
--   Initial testing code.
--   This included the functionality for parsing user-inputted extensions.
+- Not a release.
+- Initial testing code.
+- This included the functionality for parsing user-inputted extensions.
